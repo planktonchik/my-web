@@ -31,19 +31,28 @@ h3 {
   border-radius: 50%;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+.logo {
+  flex: 1;
+}
 
 /* Навігація */
 .navbar {
-  position: fixed;
+  /*position: fixed;
   top: 0;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.9);
-  padding: 10px 20px;
+  padding: 15px 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
-  justify-content: flex-start; /* Логотип зліва, меню справа */
-  align-items: center;
+  justify-content: pace-between; /* Логотип зліва, меню справа */
+  /* align-items: center;
   z-index: 1000;
+  left: 0;
+  z-index: 1000; */
+  display: flex;
+  justify-content: space-between; /* Відступ між логотипом та меню */
+  align-items: center;
+  padding: 10px 20px;
 }
 
 .navbar.scrolled {
@@ -52,19 +61,28 @@ h3 {
 }
 
 .nav-links {
-  list-style: none;
   display: flex;
-  gap: 20px;
+  list-style-type: none; /* Прибирає крапки перед елементами списку */
+  margin: 0;
+  padding: 0;
+  margin-right: 30px;
+}
+.nav-links li {
+  margin-right: 30px; /* Відступ між пунктами меню */
 }
 
-.nav-links a {
+.nav-links li:last-child {
+  margin-right: 0; /* Прибирає відступ після останнього елемента */
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
   font-size: 18px;
   font-weight: bold;
-  color: #333;
-  transition: color 0.3s;
 }
 
-.nav-links a:hover {
+.nav-links li a:hover {
   color: #7a6c61;
 }
 
@@ -207,23 +225,33 @@ h3 {
 /* Адаптація */
 @media (max-width: 768px) {
   .nav-links {
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background: rgba(255, 255, 255, 0.9);
-    width: 100%;
     display: none;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.9); /* Фон для мобільного меню */
+    width: 100%;
     text-align: center;
   }
-
-  .nav-links.show {
-    display: flex;
+  .nav-links.active {
+    display: flex; /* Показуємо меню, коли є клас active */
+  }
+  .nav-links li {
+    padding: 15px 0;
+    border-bottom: 1px solid #fff; /* Додати розділення між пунктами меню */
   }
 
-  .menu-btn {
-    display: block;
+  .nav-links li a {
+    color: #fff;
   }
+}
+
+.menu-btn {
+  display: none;
+  cursor: pointer;
+  margin-left: 20px;
+}
+.menu-btn img {
+  width: 40px; /* Розмір іконки бургер-меню */
+  height: auto;
 
   .navbar {
     position: fixed;
@@ -358,11 +386,28 @@ h3 {
   background-color: #f9f4ef;
   text-align: center;
 }
+#about,
+#services,
+#portfolio {
+  background-color: #fefaf6; /* Той самий колір, що й у кнопці */
+  color: #fff; /* Білий колір тексту для контрасту */
+  padding: 50px 0; /* Відступи для кожної секції */
+  text-align: center; /* Центруємо текст */
+  border: 2px solid #fefaf6; /* Рамка навколо секції того ж кольору */
+  border-radius: 8px; /* Білий колір тексту для контрасту */
+}
+#about h2,
+#services h2,
+#portfolio h2 {
+  font-size: 2rem; /* Збільшуємо розмір заголовка */
+  font-weight: bold; /* Жирний шрифт */
+  margin-bottom: 20px; /* Відступ знизу */
+}
 
 .section-title {
   font-size: 3rem;
   color: #333;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 /* Контейнер для послуг */
@@ -562,6 +607,15 @@ h3 {
 }
 
 /* Заголовки полів */
+form {
+  max-width: 400px; /* Обмежуємо максимальну ширину */
+  width: 90%; /* Щоб форма підлаштовувалась під екран */
+  margin: 80px auto 20px; /* Центруємо */
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  border-radius: 8px;
+}
 .form-group label {
   display: block;
   font-size: 1rem;
@@ -574,12 +628,10 @@ h3 {
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  padding: 12px;
-  font-size: 1rem;
-  border: 1px solid #b89d89;
-  border-radius: 6px;
-  background-color: #fdfaf6;
-  transition: border-color 0.3s ease;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 .contact-form input:focus,
@@ -591,15 +643,13 @@ h3 {
 /* Кнопка */
 .submit-button {
   width: 100%;
-  padding: 12px;
-  font-size: 1.2rem;
-  font-weight: 600;
+  padding: 10px;
+  font-size: 18px;
+  background: #333;
   color: white;
-  background-color: #7a6c61;
   border: none;
-  border-radius: 6px;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 .submit-button:hover {
@@ -607,13 +657,114 @@ h3 {
 }
 
 /* Адаптивність */
+@media (max-width: 480px) {
+  form {
+    width: 95%;
+    padding: 10px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 8px;
+  }
+}
 @media (max-width: 768px) {
   .contact-form {
-    width: 90%;
+    width: 95%;
     padding: 20px;
   }
 
   .contact-title {
     font-size: 2rem;
+  }
+}
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Сховати меню на мобільних пристроях */
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+  .nav-links li {
+    padding: 15px 0;
+    border-bottom: 1px solid #fff;
+  }
+
+  .nav-links li a {
+    color: #fff;
+  }
+  .menu-btn {
+    display: block;
+    margin-left: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    padding: 100px 20px;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+    max-width: 90%;
+  }
+
+  .cta-button {
+    padding: 12px 30px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .about-photo {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
+
+  .about-text {
+    font-size: 1rem;
+    padding: 15px;
+  }
+}
+@media (max-width: 1024px) {
+  .services-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .services-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .portfolio-container {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-image {
+    height: 250px;
+  }
+}
+@media (max-width: 480px) {
+  form {
+    width: 95%; /* Ще більше підлаштовуємо під маленькі екрани */
   }
 }
