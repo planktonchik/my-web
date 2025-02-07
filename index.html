@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="css/styles.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
-      rel="./css/styles.css"
+      rel="stylesheet"
     />
+    <script src="./js/scripts.js"></script>
   </head>
   <body>
     <!-- Фіксоване меню -->
@@ -24,6 +25,7 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
+      <div class="menu-btn"></div>
     </header>
 
     <!-- Головний екран -->
@@ -38,21 +40,25 @@
       </div>
     </section>
 
-    <!-- Розділи -->
+    <!-- Основний контент -->
     <main>
       <section id="about" class="about">
-        <h2>About Me</h2>
+        <h2 class="about-title">About Me</h2>
         <div class="about-content">
+          <p class="about-text">
+            Hi! I'm Anna Lunhul, a 28-year-old web designer and developer based
+            in Regina, Canada. I create modern, stylish, and functional websites
+            that help businesses grow. Let's work together! I specialize in
+            creating responsive, user-friendly designs with a strong focus on
+            visual appeal and performance. I am passionate about keeping up with
+            the latest design trends and technologies, which allows me to
+            deliver high-quality work to my clients.
+          </p>
           <img
             src="images/003f3efe-d894-4981-af61-059b094d93d3.png"
             alt="Anna Lunhul"
             class="about-photo"
           />
-          <p>
-            Hi! I'm Anna Lunhul, a 28-year-old web designer and developer based
-            in Regina, Canada. I create modern, stylish, and functional websites
-            that help businesses grow. Let’s work together!
-          </p>
         </div>
       </section>
 
@@ -80,24 +86,30 @@
           <img src="images/Airstream-website-homepage.png" alt="Example 1" />
           <img src="images/image-20.png" alt="Example 2" />
           <img src="images/image-25.png" alt="Example 3" />
-          <img src="images/image-32.png" alt="Example 3" />
-          <img src="images/Wakami-website-homepage.png" alt="Example 3" />
         </div>
       </section>
-
-      <section id="contact" class="contact">
-        <h2>Contact Me</h2>
-        <form class="contact-form">
-          <input type="text" placeholder="Your Name" required />
-          <input type="email" placeholder="Your Email" required />
-          <textarea placeholder="Your Message" rows="5" required></textarea>
-          <button type="submit">Send Message</button>
-        </form>
-      </section>
     </main>
+    <section id="contact" class="contact">
+      <h2>Contact Me</h2>
+      <form class="contact-form">
+        <div class="form-group">
+          <input type="text" placeholder="Your Name" required />
+        </div>
+        <div class="form-group">
+          <input type="email" placeholder="Your Email" required />
+        </div>
+        <div class="form-group">
+          <textarea placeholder="Your Message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="submit-button">Send Message</button>
+      </form>
+    </section>
 
     <footer>
       <p>&copy; 2025 Anna Lunhul. All rights reserved.</p>
     </footer>
+
+    <script src="js/scripts.js"></script>
+    <div class="menu-toggle">&#9776;</div>
   </body>
 </html>

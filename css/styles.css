@@ -1,4 +1,4 @@
-/* Базові стилі */
+/* Загальні стилі */
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
@@ -18,15 +18,20 @@ h3 {
   font-family: "Poppins", sans-serif;
   margin: 0;
 }
+
+/* Логотип */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
 .logo-pic {
   width: 70px;
   height: 70px;
-  border-radius: 50%; /* Робить фото круглим */
+  border-radius: 50%;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  align-items: center;
-  justify-content: center;
-  text-align: center;
 }
+
 /* Навігація */
 .navbar {
   position: fixed;
@@ -36,22 +41,24 @@ h3 {
   padding: 10px 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-start; /* Логотип зліва, меню справа */
   align-items: center;
   z-index: 1000;
+}
+
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 15px;
-  .nav-links {
-    margin-left: 50px; /* Відступ від логотипа */
-  }
+  gap: 20px;
 }
 
 .nav-links a {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   color: #333;
   transition: color 0.3s;
@@ -61,138 +68,98 @@ h3 {
   color: #7a6c61;
 }
 
-/* Геройський розділ */
+/* Головна секція */
 .hero {
   height: 100vh;
-  background: url("https://cdn.careerprocanada.ca/wp-content/uploads/2021/07/Resume-Website-1024x663.jpg.webp")
-    no-repeat center center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: white;
   position: relative;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1;
+  overflow: hidden;
+  background: url("https://cdn.careerprocanada.ca/wp-content/uploads/2021/07/Resume-Website-1024x663.jpg.webp")
+    no-repeat center / cover;
 }
 
 .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 1;
+  max-width: 80%;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content p {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: white;
+  text-align: center;
+  max-width: 800px;
+  line-height: 1.8;
+  margin: 0 auto 30px auto;
+  text-shadow: 4px 4px 15px rgba(255, 165, 0, 1),
+    -2px -2px 15px rgba(255, 165, 0, 0.7);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1.5s ease-out 0.8s forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero h1 {
-  font-size: 3rem;
+  font-size: 4rem;
+  font-weight: bold;
   margin-bottom: 20px;
+  color: #ffcc00;
 }
 
 .hero p {
-  font-family: "Poppins", sans-serif;
-  font-size: 2rem;
-  margin-bottom: 30px;
+  font-size: 1.5rem;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto 30px auto;
+  color: #ffffff;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
 }
 
 .cta-button {
-  background-color: #7a6c61;
-  color: white;
-  padding: 10px 20px;
+  background-color: #ffcc00;
+  color: #333;
+  padding: 15px 40px;
+  font-size: 18px;
+  font-weight: bold;
   border: none;
-  font-size: 16px;
-  transition: background-color 0.3s;
+  border-radius: 30px 10px 30px 10px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease-out 0.5s forwards;
 }
 
 .cta-button:hover {
-  background-color: #6b5b53;
+  background-color: #ff9900;
+  transform: scale(1.1) rotate(3deg);
 }
 
-/* Сервіси */
-.services {
-  padding: 50px 20px;
-  background-color: #f4ece2;
-  text-align: center;
-  font-family: "Poppins", sans-serif;
-}
-.services h2 {
-  font-family: "Poppins", sans-serif;
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 30px;
-}
-.service-cards {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.card {
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  flex: 1 1 300px; /* Ширина картки */
-  max-width: 300px;
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-.card h3 {
-  font-size: 1.5rem;
-  color: #7a6c61;
-  margin-bottom: 15px;
-}
-.card p {
-  font-size: 1rem;
-  color: #555;
-  line-height: 1.5;
-}
-/* Портфоліо */
-.portfolio-gallery {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.portfolio-gallery img {
-  margin-bottom: 5%;
-  width: 100%;
-  border-radius: 5px;
-  transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.portfolio-gallery img:hover {
-  transform: scale(1.1); /* Легке збільшення при наведенні */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-.portfolio {
-  padding: 50px 20px;
-  background-color: #f4ece2;
-  text-align: center;
-}
-.portfolio h2 {
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 30px;
-}
-/* Контактна форма */
+/* Секція Contact Me */
 .contact {
   padding: 50px 20px;
   background-color: #f9f4ef;
   text-align: center;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
 .contact-form {
@@ -211,62 +178,165 @@ h3 {
   border-radius: 5px;
 }
 
-.contact-form button {
+/* Анімація фокусу */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #7a6c61;
+  box-shadow: 0 4px 8px rgba(122, 108, 97, 0.3);
+  outline: none;
+}
+
+/* Стилі для кнопки */
+.submit-button {
   background-color: #7a6c61;
   color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
   font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
-.contact-form button:hover {
+.submit-button:hover {
   background-color: #6b5b53;
+  transform: scale(1.05);
 }
+
+/* Адаптація */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: rgba(255, 255, 255, 0.9);
+    width: 100%;
+    display: none;
+    text-align: center;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .navbar {
+    position: fixed;
+    top: 20px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between; /* Логотип зліва, меню справа */
+    align-items: center;
+  }
+
+  .hero {
+    height: 80vh;
+    background-position: center top;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+}
+/* Основні стилі для секції "About" */
+/* Основні стилі для секції "About" */
 .about {
   padding: 50px 20px;
-  text-align: center; /* Вирівнює текст по центру */
-  background-color: #f9f4ef; /* Світлий фон для секції */
+  background-color: #f9f4ef;
+  text-align: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+  margin-bottom: 20px; /* Додаємо відстань між секцією та наступною */
 }
-.about p {
-  max-width: 600px; /* Обмежує ширину тексту для кращого вигляду */
-  font-size: 1rem; /* Розмір тексту */
-  line-height: 1.6; /* Інтервал між рядками */
-  color: #333; /* Колір тексту */
+
+/* Заголовок About */
+.about-title {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 30px;
 }
+
+/* Контейнер для тексту і фото */
 .about-content {
   display: flex;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
   justify-content: center;
-  text-align: center;
-  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 20px; /* Відстань між фото та текстом */
 }
 
-.about-photo {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%; /* Робить фото круглим */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+/* Стилі для тексту з рамкою та анімацією */
+.about-text {
+  max-width: 600px;
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  border: 2px solid #7a6c61;
+  border-radius: 15px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out forwards;
+  transition: box-shadow 0.3s ease;
 }
 
-@media (max-width: 768px) {
-  .cta-button {
-    font-size: 14 px;
-    padding: 8px 16px;
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-p,
-a,
-li {
-  font-family: "Poppins", sans-serif;
+/* Ефект на фокус */
+.about-text:hover {
+  box-shadow: 0 8px 15px rgba(122, 108, 97, 0.3);
 }
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px; /* Відстань між пунктами меню */
-  margin-left: auto; /* Зміщує меню вправо */
+
+/* Стилі для фото (зменшено) */
+.about-photo {
+  width: 600px; /* Зменшено фото */
+  height: 650px; /* Зменшено фото */
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  margin-bottom: 20px; /* Відстань до наступної секції */
+}
+
+/* Адаптивність для мобільних пристроїв */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .about-photo {
+    width: 120px; /* Менше фото для мобільних */
+    height: 120px;
+  }
+
+  .about-title {
+    font-size: 2rem;
+  }
+
+  .about-text {
+    font-size: 1.1rem;
+    padding: 15px;
+  }
 }
