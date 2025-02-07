@@ -318,6 +318,14 @@ h3 {
   border-radius: 10px;
   margin-bottom: 20px; /* Відстань до наступної секції */
 }
+.divider {
+  font-size: 30px;
+  color: #7a6c61;
+  margin: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 /* Адаптивність для мобільних пристроїв */
 @media (max-width: 768px) {
