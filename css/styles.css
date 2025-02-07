@@ -206,7 +206,7 @@ h3 {
 
 /* Стилі для кнопки */
 .submit-button {
-  background-color: #7a6c61;
+  background-color: #ff9800;
   color: white;
   padding: 12px;
   border: none;
@@ -218,7 +218,7 @@ h3 {
 }
 
 .submit-button:hover {
-  background-color: #6b5b53;
+  background-color: #fbc02d;
   transform: scale(1.05);
 }
 
@@ -590,15 +590,6 @@ h3 {
 }
 
 /* Стилі форми */
-.contact-form {
-  max-width: 700px;
-  min-width: 600px;
-  margin: 0 auto;
-  background: #fff;
-  padding: 50px 130px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
 
 /* Стилі для груп полів */
 .form-group {
@@ -608,13 +599,13 @@ h3 {
 
 /* Заголовки полів */
 form {
-  max-width: 400px; /* Обмежуємо максимальну ширину */
-  width: 90%; /* Щоб форма підлаштовувалась під екран */
-  margin: 80px auto 20px; /* Центруємо */
-  padding: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  background: #fff;
-  border-radius: 8px;
+  max-width: 600px; /* Обмежуємо максимальну ширину */
+  /* Щоб форма підлаштовувалась під екран */
+  margin: 0 auto; /* Центруємо */
+  padding: 20px;
+  background-color: #fff; /* Світлий фон для форми */
+  border-radius: 8px; /* Округлені кути для форми */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 .form-group label {
   display: block;
@@ -625,146 +616,149 @@ form {
 }
 
 /* Поля вводу */
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 8px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
+form input,
+form textarea {
+  width: 100%; /* Робимо інпут та textarea на всю ширину */
+  padding: 10px; /* Відступи всередині інпутів */
+  margin-bottom: 15px; /* Відступ між елементами форми */
+  border: 1px solid f9f9f9;
+  border-radius: 4px;
+  box-sizing: border-box;
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: #7a6c61;
-  outline: none;
-}
-
-/* Кнопка */
-.submit-button {
-  width: 100%;
-  padding: 10px;
-  font-size: 18px;
-  background: #333;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.submit-button:hover {
-  background-color: #5f5449;
-}
-
-/* Адаптивність */
-@media (max-width: 480px) {
-  form {
-    width: 95%;
-    padding: 10px;
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    border-color: #7a6c61;
+    outline: none;
   }
 
-  button {
-    font-size: 16px;
+  /* Кнопка */
+
+  /* Адаптивність */
+  @media (max-width: 480px) {
+    form {
+      width: 90%;
+      padding: 15px;
+    }
+
+    button {
+      font-size: 18px;
+      width: 100%;
+    }
+  }
+  form input,
+  form textarea {
     padding: 8px;
+    margin-left: auto; /* Центруємо інпути */
+    margin-right: auto; /* Центруємо інпути */
+    box-sizing: border-box; /* Трохи менші відступи в інпутах */
   }
-}
-@media (max-width: 768px) {
-  .contact-form {
-    width: 95%;
-    padding: 20px;
+  @media (max-width: 768px) {
+    .contact-form {
+      width: 90%;
+      padding: 15px;
+    }
+    form input,
+    form textarea {
+      padding: 8px; /* Трохи менші відступи в інпутах */
+    }
+
+    .contact-title {
+      font-size: 2rem;
+    }
+    form button {
+      width: 100%; /* Кнопка на всю ширину */
+      font-size: 18px; /* Збільшуємо шрифт на кнопці для зручності */
+    }
   }
 
-  .contact-title {
-    font-size: 2rem;
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none; /* Сховати меню на мобільних пристроях */
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .nav-links.active {
+      display: flex;
+    }
+    .nav-links li {
+      padding: 15px 0;
+      border-bottom: 1px solid #fff;
+    }
+
+    .nav-links li a {
+      color: #fff;
+    }
+    .menu-btn {
+      display: block;
+      margin-left: 20px;
+    }
   }
-}
-@media (max-width: 768px) {
-  .nav-links {
-    display: none; /* Сховати меню на мобільних пристроях */
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.9);
+  @media (max-width: 768px) {
+    .hero {
+      height: auto;
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 90%;
+    }
+
+    .cta-button {
+      padding: 12px 30px;
+      font-size: 16px;
+    }
+  }
+  @media (max-width: 768px) {
+    .about-content {
+      flex-direction: column;
+      text-align: center;
+      gap: 20px;
+    }
+
+    .about-photo {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+    }
+
+    .about-text {
+      font-size: 1rem;
+      padding: 15px;
+    }
+  }
+  @media (max-width: 1024px) {
+    .services-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
-  .nav-links.active {
-    display: flex;
+  @media (max-width: 768px) {
+    .services-container {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
   }
-  .nav-links li {
-    padding: 15px 0;
-    border-bottom: 1px solid #fff;
-  }
+  @media (max-width: 768px) {
+    .portfolio-container {
+      grid-template-columns: 1fr;
+    }
 
-  .nav-links li a {
-    color: #fff;
+    .portfolio-image {
+      height: 250px;
+    }
   }
-  .menu-btn {
-    display: block;
-    margin-left: 20px;
-  }
-}
-@media (max-width: 768px) {
-  .hero {
-    height: auto;
-    padding: 100px 20px;
-    text-align: center;
-  }
-
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .hero p {
-    font-size: 1.2rem;
-    max-width: 90%;
-  }
-
-  .cta-button {
-    padding: 12px 30px;
-    font-size: 16px;
-  }
-}
-@media (max-width: 768px) {
-  .about-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 20px;
-  }
-
-  .about-photo {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-  }
-
-  .about-text {
-    font-size: 1rem;
-    padding: 15px;
-  }
-}
-@media (max-width: 1024px) {
-  .services-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .services-container {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-}
-@media (max-width: 768px) {
-  .portfolio-container {
-    grid-template-columns: 1fr;
-  }
-
-  .portfolio-image {
-    height: 250px;
-  }
-}
-@media (max-width: 480px) {
-  form {
-    width: 95%; /* Ще більше підлаштовуємо під маленькі екрани */
+  @media (max-width: 480px) {
+    form {
+      width: 95%; /* Ще більше підлаштовуємо під маленькі екрани */
+    }
   }
 }
