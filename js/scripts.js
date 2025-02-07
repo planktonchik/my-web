@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
     navbar.classList.toggle("scrolled", window.scrollY > 50);
   });
 
-  const menuBtn = document.querySelector(".menu-btn");
   const navLinks = document.querySelector(".nav-links");
 
   menuBtn.addEventListener("click", () => {
@@ -37,17 +36,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const contactForm = document.querySelector(".contact-form");
-
-  contactForm.addEventListener("submit", function (event) {
-    event.preventDefault(); // Забороняємо перезавантаження сторінки
-
-    alert("Thank you for your message! I will get back to you soon.");
-
-    contactForm.reset(); // Очищаємо форму після відправки
-  });
-});
 // Використовуємо Intersection Observer API для відслідковування видимості елемента
 
 // Використовуємо Intersection Observer API для відслідковування видимості елемента
