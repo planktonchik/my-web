@@ -316,8 +316,10 @@ h3 {
   object-fit: cover;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
-  margin-bottom: 20px; /* Відстань до наступної секції */
+  margin-bottom: 20px;
+  /* Відстань до наступної секції */
 }
+
 .divider {
   font-size: 30px;
   color: #7a6c61;
@@ -346,5 +348,272 @@ h3 {
   .about-text {
     font-size: 1.1rem;
     padding: 15px;
+  }
+}
+
+/* Стилі для секції послуг */
+/* Стилі для секції послуг */
+.services {
+  padding: 50px 20px;
+  background-color: #f9f4ef;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+/* Контейнер для послуг */
+.services-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Стилі для кожного блоку послуг */
+.service-item {
+  width: 22%; /* Зменшуємо ширину, щоб вмістити 4 блоки */
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Анімація для появи */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Іконка послуги */
+.service-icon {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Заголовок послуги */
+.service-title {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Опис послуги */
+.service-description {
+  font-size: 1.2rem;
+  color: #7a6c61;
+  line-height: 1.5;
+}
+
+/* Адаптивність для мобільних пристроїв */
+@media (max-width: 768px) {
+  .services-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .service-item {
+    width: 100%;
+  }
+}
+/* Стилі для секції Portfolio */
+/* Секція Portfolio */
+.portfolio {
+  padding: 80px 20px; /* Більше відступів для розділення */
+  background-color: #f9f4ef;
+  text-align: center;
+}
+
+/* Заголовок секції */
+.section-title {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 50px;
+}
+
+/* Контейнер для проектів */
+.portfolio-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 колонки */
+  gap: 40px; /* Більше простору між роботами */
+  justify-content: center;
+  align-items: center; /* Вирівнюємо по центру */
+  max-width: 1200px; /* Задаємо ширину контейнера */
+  margin: 0 auto;
+}
+
+/* Оновлений розмір проекту */
+.portfolio-item {
+  width: 100%;
+  max-width: 600px; /* Обмежуємо максимальну ширину */
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Анімація при наведенні */
+.portfolio-item:hover {
+  transform: scale(1.05);
+}
+
+/* Стилі для зображення */
+.portfolio-image {
+  width: 100%;
+  height: 400px; /* Робимо картинки більшими */
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Збільшення картинки при наведенні */
+.portfolio-item:hover .portfolio-image {
+  transform: scale(1.1);
+}
+
+/* Інформація про проект */
+.portfolio-info {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Плавне з’явлення тексту */
+.portfolio-item:hover .portfolio-info {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Стилі для заголовка та опису */
+.portfolio-title {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.portfolio-description {
+  font-size: 1.2rem;
+}
+
+/* Адаптивність для мобільних пристроїв */
+@media (max-width: 768px) {
+  .portfolio-container {
+    grid-template-columns: 1fr; /* На малих екранах 1 колонка */
+    gap: 30px;
+  }
+
+  .portfolio-item {
+    max-width: 100%;
+  }
+
+  .portfolio-image {
+    height: 300px; /* Менше для мобільних */
+  }
+}
+
+/* Загальний стиль секції */
+/* Основні стилі форми */
+.contact {
+  background-color: #f9f4ef; /* Світлий фон */
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+/* Стилі форми */
+.contact-form {
+  max-width: 700px;
+  min-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 50px 130px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Стилі для груп полів */
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* Заголовки полів */
+.form-group label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #7a6c61;
+}
+
+/* Поля вводу */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #b89d89;
+  border-radius: 6px;
+  background-color: #fdfaf6;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #7a6c61;
+  outline: none;
+}
+
+/* Кнопка */
+.submit-button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  background-color: #7a6c61;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #5f5449;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+  .contact-form {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .contact-title {
+    font-size: 2rem;
   }
 }

@@ -64,44 +64,138 @@
       </section>
 
       <section id="services" class="services">
-        <h2>Services</h2>
-        <div class="service-cards">
-          <div class="card">
-            <h3>Custom Website Design</h3>
-            <p>Tailored designs to match your brand.</p>
+        <h2 class="section-title">Services</h2>
+        <div class="services-container">
+          <div class="service-item">
+            <div class="service-icon">🌐</div>
+            <h3 class="service-title">Custom Website Design</h3>
+            <p class="service-description">
+              Tailored designs to match your brand.
+            </p>
           </div>
-          <div class="card">
-            <h3>Responsive Development</h3>
-            <p>Websites that look great on any device.</p>
+          <div class="service-item">
+            <div class="service-icon">📱</div>
+            <h3 class="service-title">Responsive Development</h3>
+            <p class="service-description">
+              Websites that look great on any device.
+            </p>
           </div>
-          <div class="card">
-            <h3>SEO Optimization</h3>
-            <p>Get discovered online easily.</p>
+          <div class="service-item">
+            <div class="service-icon">🔍</div>
+            <h3 class="service-title">SEO Optimization</h3>
+            <p class="service-description">Get discovered online easily.</p>
+          </div>
+          <div class="service-item">
+            <div class="service-icon">⚙️</div>
+            <h3 class="service-title">Web Maintenance</h3>
+            <p class="service-description">
+              Ongoing support and updates for your website.
+            </p>
+          </div>
+          <div class="service-item">
+            <div class="service-icon">🎨</div>
+            <h3 class="service-title">Graphic Design</h3>
+            <p class="service-description">
+              Creating stunning visuals for your brand.
+            </p>
+          </div>
+          <div class="service-item">
+            <div class="service-icon">📈</div>
+            <h3 class="service-title">Analytics & Reporting</h3>
+            <p class="service-description">
+              Track and analyze your website's performance.
+            </p>
           </div>
         </div>
       </section>
 
       <section id="portfolio" class="portfolio">
-        <h2>Portfolio</h2>
-        <div class="portfolio-gallery">
-          <img src="images/Airstream-website-homepage.png" alt="Example 1" />
-          <img src="images/image-20.png" alt="Example 2" />
-          <img src="images/image-25.png" alt="Example 3" />
+        <h2 class="section-title">Portfolio</h2>
+        <div class="portfolio-container">
+          <div class="portfolio-item">
+            <img
+              src="./images/Wakami-website-homepage.png"
+              alt="Project 1"
+              class="portfolio-image"
+            />
+            <div class="portfolio-info">
+              <h3 class="portfolio-title">Wakami</h3>
+              <p class="portfolio-description">
+                A modern website for a tech company.
+              </p>
+            </div>
+          </div>
+          <div class="portfolio-item">
+            <img
+              src="./images/image-32.png"
+              alt="Project 2"
+              class="portfolio-image"
+            />
+            <div class="portfolio-info">
+              <h3 class="portfolio-title">World of Beer</h3>
+              <p class="portfolio-description">
+                A clean and minimalistic design for a blog.
+              </p>
+            </div>
+          </div>
+          <div class="portfolio-item">
+            <img
+              src="./images/image-25.png"
+              alt="Project 3"
+              class="portfolio-image"
+            />
+            <div class="portfolio-info">
+              <h3 class="portfolio-title">Pinch of Yum</h3>
+              <p class="portfolio-description">
+                A creative portfolio for an artist.
+              </p>
+            </div>
+          </div>
+          <div class="portfolio-item">
+            <img
+              src="./images/Airstream-website-homepage.png"
+              alt="Project 4"
+              class="portfolio-image"
+            />
+            <div class="portfolio-info">
+              <h3 class="portfolio-title">AIRSTREAM</h3>
+              <p class="portfolio-description">
+                E-commerce website with an intuitive design.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     </main>
+
     <section id="contact" class="contact">
-      <h2>Contact Me</h2>
+      <h2 class="contact-title">Contact Me</h2>
       <form class="contact-form">
         <div class="form-group">
-          <input type="text" placeholder="Your Name" required />
+          <label for="name">Your Name</label>
+          <input type="text" id="name" placeholder="Enter your name" required />
         </div>
+
         <div class="form-group">
-          <input type="email" placeholder="Your Email" required />
+          <label for="email">Your Email</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            required
+          />
         </div>
+
         <div class="form-group">
-          <textarea placeholder="Your Message" rows="5" required></textarea>
+          <label for="message">Your Message</label>
+          <textarea
+            id="message"
+            rows="5"
+            placeholder="Write your message..."
+            required
+          ></textarea>
         </div>
+
         <button type="submit" class="submit-button">Send Message</button>
       </form>
     </section>
@@ -111,6 +205,5 @@
     </footer>
 
     <script src="js/scripts.js"></script>
-    <div class="menu-toggle">&#9776;</div>
   </body>
 </html>
